@@ -33,7 +33,8 @@ router.post('/index', isLoggedin, async (req, res) => {
 router.get('/:id',isLoggedin, async(req,res)=>{
     const { id} =req.params;
     const room = await Room.findById(id).populate('owner')
-                .populate({path: 'messages'}).populate({path: 'chat_users'}).sort({'messages.date': 1})
+                .populate({path: 'messages'}).populate({path: 'users'}).sort({'messages.date': 1})
+    console.log(room)
     res.render("chats/room", { room , user: req.user})
 })
 

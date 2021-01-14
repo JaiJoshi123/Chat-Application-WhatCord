@@ -7,7 +7,7 @@ const roomSchema = new mongoose.Schema({
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'chat_User'
     },
     messages:  [
         {
@@ -18,7 +18,7 @@ const roomSchema = new mongoose.Schema({
     users: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'chat_User'
         }
     ]
 })
