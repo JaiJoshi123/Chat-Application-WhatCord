@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>WhatCord</title>
+</head>
+<body>
+    <main class="container mt-5">
+        <div class="row justify-content-md-center">
+            <h1 class="text-center">WhatCord</h1>
+            <div class="col-md-auto">
+                <% if(!currentUser) { %>
+                    <a class="btn btn-success" href="/google">GOOGLE LOGIN</a>
+                <% } else { %>
+                    <a class="btn btn-info" href="/google">LOGIN WITH DIFF ACC</a>
+                    <a class="btn btn-warning" href="/logout">LOGOUT</a>
+                    <a href="/chat/index" class="btn btn-success">INDEX PAGE</a>
+                <%}%>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>

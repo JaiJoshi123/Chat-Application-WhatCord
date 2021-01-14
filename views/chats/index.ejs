@@ -1,0 +1,48 @@
+<% layout('layout/boilerplate')%>
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%=currentUser.image%>" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Welcome <%=currentUser.displayName%></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="col-md-auto border-end border-5">
+        <form action="/chat/index" method="POST">
+            <h3>Create a server?</h3>
+            <div class="mb-3">
+                <label class="form-label" for="roomname">Enter room name:</label>
+                <input class="form-control" type="text" id="roomname" name="roomName" placeholder="Room name">
+            </div>
+            <button class="d-block btn btn-success">Create</button>
+        </form>
+    </div>
+    <div class="col-md-auto">
+        <% if(rooms.length!=0) {%>
+        <form action="/chat/index" method="POST">
+            <h3>Join a server.</h3>
+            <div class="mb-3">
+                <label for="selectroom" class="form-label">Select room</label>
+                <select id="selectroom" class="form-select" aria-label="Default select example" name="roomname2">
+                    <% for(let room of rooms){ %>}
+                        <option value="<%=room._id%>"><%=room.name%></option>
+                    <%} %>
+                </select>
+            </div>
+            <button class="btn btn-success">Join</button>
+        </form>
+        <%} else { %>
+            <h3>No rooms in database</h3>
+        <%}%>
+    </div>
+    
+</div>
