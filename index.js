@@ -109,6 +109,10 @@ io.on('connection', socket => {
 
     socket.on('chatMessage', async ({ msg, user, room }) => {
         //console.log(user)
+        msg= msg.replace(/</g,' ');
+        msg= msg.replace(/>/g,' ');
+        //msg= msg.replace(/</g,' ');
+        console.log(typeof(msg))
         const chat = new Chat({
             author: user.displayName,
             message: msg
